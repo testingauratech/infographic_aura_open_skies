@@ -61,24 +61,18 @@
 </head>
 <body class="bg-[#F0F4F8] text-[#001E3E]">
 
-    <!-- Palette: Brilliant Blues. No SVG or Mermaid JS used. -->
-
     <div class="container mx-auto p-4 md:p-8">
 
-        <!-- Header -->
         <header class="text-center mb-16">
             <div class="mb-4">
-                <!-- Reemplaza esta URL con la URL de tu logo real alojado en un servidor -->
                 <img src="https://res.cloudinary.com/ddoys5y6z/image/upload/v1750818349/WhatsApp_Image_2025-06-24_at_8.07.44_PM_ts7dqe.jpg" onerror="this.onerror=null;this.src='https://res.cloudinary.com/ddoys5y6z/image/upload/v1750818349/WhatsApp_Image_2025-06-24_at_8.07.44_PM_ts7dqe.jpg';" alt="Logo de AuraTech - Consultoría y Servicios" class="mx-auto h-32 w-auto rounded-lg shadow-md">
             </div>
             <h1 class="text-4xl md:text-6xl font-black text-[#00449E] mb-2">Modernizando la Cotización Inmobiliaria</h1>
             <p class="text-lg md:text-xl text-[#0170E5] max-w-3xl mx-auto">Una propuesta de valor de <span class="font-bold">AuraTech</span> para <span class="font-bold">Open Skies</span>.</p>
         </header>
 
-        <!-- Section 1: The Challenge & Solution -->
         <section id="solution" class="mb-20">
             <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 text-center">
-                <!-- Reemplaza esta URL con la URL de tu logo real alojado en un servidor -->
                 <img src="https://res.cloudinary.com/ddoys5y6z/image/upload/v1750818349/WhatsApp_Image_2025-06-24_at_8.07.44_PM_1_jnhcpf.jpg" onerror="this.onerror=null;this.src='https://res.cloudinary.com/ddoys5y6z/image/upload/v1750818349/WhatsApp_Image_2025-06-24_at_8.07.44_PM_1_jnhcpf.jpg';" alt="Logo de AuraTech" class="mx-auto h-16 w-auto mb-6 rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-[#00449E] mb-4">El Reto: Procesos Manuales Lentos</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto mb-8">El proceso manual de cotización es propenso a errores, consume tiempo valioso de sus agentes y retrasa la respuesta al cliente, arriesgando la venta.</p>
@@ -119,7 +113,6 @@
             </div>
         </section>
 
-        <!-- Section 2: Key Features -->
         <section id="features" class="mb-20">
             <h2 class="text-center text-3xl md:text-4xl font-bold text-[#00449E] mb-12">Funcionalidades Clave que Impulsan sus Ventas</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -156,7 +149,6 @@
             </div>
         </section>
 
-        <!-- Section 3: Investment -->
         <section id="investment" class="mb-20">
              <h2 class="text-center text-3xl md:text-4xl font-bold text-[#00449E] mb-12">Una Inversión Inteligente y Predecible</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -180,7 +172,6 @@
             </div>
         </section>
 
-        <!-- Section 4: Projected Impact -->
         <section id="impact">
             <h2 class="text-center text-3xl md:text-4xl font-bold text-[#00449E] mb-12">Impacto Proyectado en sus Operaciones</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -208,7 +199,6 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="text-center mt-20 pt-8 border-t border-gray-300">
             <p class="text-2xl font-bold text-[#00449E]">¿Listo para transformar su proceso de ventas?</p>
             <p class="text-gray-600 mt-2">Contacte a AuraTech hoy mismo.</p>
@@ -218,125 +208,6 @@
 
     </div>
 
-    <script>
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            }
-            return label;
-        };
-
-        const defaultChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                     labels: {
-                        color: '#001E3E',
-                        font: {
-                            family: "'Inter', sans-serif"
-                        }
-                    }
-                },
-                tooltip: {
-                    callbacks: {
-                        title: tooltipTitleCallback
-                    },
-                    backgroundColor: '#00449E',
-                    titleFont: { family: "'Inter', sans-serif", size: 14 },
-                    bodyFont: { family: "'Inter', sans-serif", size: 12 },
-                    padding: 12,
-                    cornerRadius: 8
-                }
-            }
-        };
-
-        const barChartAxisOptions = {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { color: '#00449E' },
-                    grid: { color: '#E0E7FF' }
-                },
-                x: {
-                    ticks: { color: '#00449E' },
-                    grid: { display: false }
-                }
-            }
-        };
-
-        // Investment Chart (Donut)
-        const investmentCtx = document.getElementById('investmentChart').getContext('2d');
-        new Chart(investmentCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Desarrollo Continuo', 'Mantenimiento y Servidores', 'Soporte Técnico', 'Actualizaciones y Seguridad'],
-                datasets: [{
-                    label: 'Distribución de la Inversión',
-                    data: [35, 25, 20, 20],
-                    backgroundColor: ['#0170E5', '#52A4FF', '#A9D3FF', '#00449E'],
-                    borderColor: '#FFFFFF',
-                    borderWidth: 4,
-                    hoverOffset: 8
-                }]
-            },
-            options: defaultChartOptions
-        });
-
-        // Time Chart (Bar)
-        const timeCtx = document.getElementById('timeChart').getContext('2d');
-        new Chart(timeCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Antes (Manual)', 'Ahora (Automatizado)'],
-                datasets: [{
-                    label: 'Minutos por cotización',
-                    data: [30, 2],
-                    backgroundColor: ['#A9D3FF', '#0170E5'],
-                    borderRadius: 8,
-                    barPercentage: 0.6
-                }]
-            },
-            options: { ...defaultChartOptions, ...barChartAxisOptions, plugins: { ...defaultChartOptions.plugins, legend: { display: false } } }
-        });
-
-        // Productivity Chart (Bar)
-        const productivityCtx = document.getElementById('productivityChart').getContext('2d');
-        new Chart(productivityCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Antes', 'Ahora'],
-                datasets: [{
-                    label: 'Cotizaciones por agente al día',
-                    data: [10, 50],
-                    backgroundColor: ['#A9D3FF', '#0170E5'],
-                    borderRadius: 8,
-                    barPercentage: 0.6
-                }]
-            },
-             options: { ...defaultChartOptions, ...barChartAxisOptions, plugins: { ...defaultChartOptions.plugins, legend: { display: false } } }
-        });
-
-        // Satisfaction Chart (Bar)
-        const satisfactionCtx = document.getElementById('satisfactionChart').getContext('2d');
-        new Chart(satisfactionCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Antes', 'Ahora'],
-                datasets: [{
-                    label: 'Tasa de Cierre (%)',
-                    data: [15, 25],
-                    backgroundColor: ['#A9D3FF', '#0170E5'],
-                    borderRadius: 8,
-                    barPercentage: 0.6
-                }]
-            },
-             options: { ...defaultChartOptions, ...barChartAxisOptions, plugins: { ...defaultChartOptions.plugins, legend: { display: false } } }
-        });
-
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>
